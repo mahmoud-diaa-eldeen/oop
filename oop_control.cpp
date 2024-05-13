@@ -1,34 +1,34 @@
-#include"servce.cpp"
+#include"service.cpp"
 //****************doctor**************
 class controlDoctor{
 	
-	doctorSirviceImp doctorService;
+	DoctorServiceImpl doctorService;
 	public: 
 		int  addDoctor (doctor Doctor) 
 	 	{
-	  doctorSrvice.addDoctor(Doctor);
+	  return doctorService.addDoctor(Doctor);
 	}
 	void editDoctor(int id,doctor Doctor)
 	{
 		doctorService.editDoctor(id,Doctor);
 	}
-	void showDoctor(int id)
+	void getDoctor(int id)
 	{
 		doctorService.getDoctor(id);
 	}
-	void removeDoctor(int id)
+	/*void removeDoctor(int id)
 	{
 		doctorService.removeDoctor(id);
-	}
+	}*/
 };
 //****************medicine**************
 class controlMedicine{
 	
-	medicineSirviceImp medicineService;
+	medicineServiceImpl medicineService;
 	public: 
 		int  addMedicine (medicine Medicine) 
 	 	{
-	  medicineSrvice.addMedicine(Medicine);
+	  return medicineService.addMedicine(Medicine);
 	}
 	void editMedicine(int id,medicine Medicine)
 	{
@@ -38,52 +38,52 @@ class controlMedicine{
 	{
 		medicineService.getMedicine(id);
 	}
-	void removeMedicine(int id)
+/*	void removeMedicine(int id)
 	{
 		medicineService.removeMedicine(id);
-	}
+	}*/
 };
 //****************patient**************
 class controlPatient{
 	
-	patientSirviceImp patientService;
+	patientServiceImpl patientService;
 	public: 
 		int  addPatient (patient Patient) 
 	 	{
-	  patientSrvice.addPatient(Patient);
+	 return patientService.addPatient(Patient);
 	}
 	void editPatient(int id,patient Patient)
 	{
 		patientService.editPatient(id,Patient);
 	}
-	void showPatient(int id)
+	void getPatient(int id)
 	{
 		patientService.getPatient(id);
 	}
-	void removePatient(int id)
+	/*void removePatient(int id)
 	{
 		patientService.removePatient(id);
-	}
+	}*/
 };
 //****************staffinformatoin**************
-class controlstaffinformatoin{
+class controlstaffInf{
 	
-	staffInformatoinSirviceImp stafInformatoinService;
+	staffInfServiceImpl StaffInfService;
 	public: 
-		int  addStaffInformatoin (staffInformatoin StaffInformatoin) 
+		int  addStaffInf (staffInf  StaffInformatoin) 
 	 	{
-	  staffinformatoinSrvice.addStaffInformatoin(StaffInformatoin);
+	  return StaffInfService.addStaffInf(StaffInformatoin);
 	}
-	void editStaffInformatoin(int id,staffInformatoin StaffInformatoin)
+	void editStaffInf(int id,staffInf StaffInformatoin)
 	{
-		staffInformatoinService.edit(id,Patient);
+		StaffInfService.editStaffInf(id,StaffInformatoin);
 	}
-	void show(int id)
+	void getStaffInf(int id)
 	{
-	staffInformatoinService.get(id);
+	StaffInfService.getStaffInf(id);
 	}
-	void remove(int id)
+	/*void remove(int id)
 	{
 		staffInformatoinService.remove(id);
-	}
+	}*/
 };
