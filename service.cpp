@@ -1,5 +1,4 @@
-#include "../repository/Repository.cpp"
-#include "../validation/Validation.cpp"
+#include "valdition.cpp"
 /////////////////////////////  Doctor \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 // interface DoctorService
 class doctorService {
@@ -9,114 +8,127 @@ class doctorService {
 		virtual int editDoctor(doctor Doctor) = 0;
 };
 // Class DoctorServiceImpl
-class DoctorServiceImpl {
+class DoctorServiceImpl  {
 	private:
-		doctorRepositoryImpl doctorRepository;
-		doctorValidation studentValidation;
-		ValidationService validationService;
+		doctorRepoImpl DoctorRepository;
+		valditionDoctor DoctorValidation;
 		doctor doctorResult;
 	public:
 		int addDoctor(doctor Doctor) {
-			if(doctorValidation.validteDoctor(Doctor) == 1){
-				int id = doctorRepository.addDoctor(Doctor);
+			if(DoctorValidation.doctorValdition(Doctor) == 1){
+				int id = DoctorRepository.addDoctor(Doctor);
 					return id;
 				
 			}
 			return -1;
 		}
-		doctor getDoctor(int id) {
-			doctorResult = doctorRepository.getDoctor(id);
-			return doctorResult;
+		void getDoctor(int id) {
+			 DoctorRepository.getDoctor(id);
 		}
-		int editDoctor(doctor Doctor) {
-			int index = doctorRepository.editDoctor(Doctor);
-				cout<<"Sucess Edit Doctor Wit ID ["<<student.getId()<<"]"<<endl;
+		int editDoctor(int id,doctor Doctor) {
+			 DoctorRepository.editDoctor(id,Doctor);
+				cout<<"Sucess Edit Doctor Wit ID ["<<Doctor.getId()<<"]"<<endl;
 		}
 };
 
-/////////////////////////////  Course \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// interface CourseService
-class CourseService {
+/////////////////////////////  patient \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// interface patientService
+class patientService {
 	public:
-		virtual int addCourse(Course course) = 0;
-		virtual Course getCourseById(int id) = 0;
-		virtual int editCourse(Course course) = 0;
+		virtual int addPatient(patient Patient) = 0;
+		virtual patient getPatient(int id) = 0;
+		virtual int editPatient(patient Patient) = 0;
 };
-// Class CourseServiceImpl
-class CourseServiceImpl {
+// Class patientServiceImpl
+class patientServiceImpl {
 	private:
-		CourseRepositoryImpl courseRepository;
-		CourseValidation courseValidation;
-		ValidationService validationService;
-		Course courseResult;
+		patientRepoImpl PatientRepoatry;
+		valditionPatient patientValidation;
+		patient patientResult;
 	public:
-		int addCourse(Course course) {
-			if(courseValidation.validteCourse(course) == 1) {
-				int id = courseRepository.addCourse(course);
-				if(id == -1){
-					validationService.fullData("Course");
-				} else {
+		int addPatient(patient Patient) {
+			if(patientValidation.patientValdition(Patient) == 1) {
+				int id= PatientRepoatry.addPatient(Patient);
+				
 					return id;
-				}
+				
 			}
 			return -1;
 		}
-		Course getCourseById(int id) {
-			courseResult = courseRepository.getCourseById(id);
-			if(courseResult.getId() == -1){
-				validationService.notExist("Course",id);
-			}
-			return courseResult;
+		void getPatient(int id) {
+			 PatientRepoatry.getPatient(id);
 		}
-		int editCourse(Course course) {
-			int index = courseRepository.editCourse(course);
-			if(index == -1){
-				validationService.notExist("Course",course.getId());
-			} else {
-				cout<<"Sucess Edit Course Wit ID ["<<course.getId()<<"]"<<endl;
-			}
+		int editPatient(int id,patient Patient) {
+			 PatientRepoatry.editPatient(id,Patient);
+				cout<<"Sucess Edit Patient Wit ID ["<<Patient.getId()<<"]"<<endl;
+			
 		}
 };
-/////////////////////////////  Teacher \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// interface TeacherService
-class TeacherService {
+
+/////////////////////////////  staffInf,,Staffinf \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// interface staffinfService
+class staffinfService {
 	public:
-		virtual int addTeacher(Teacher teacher) = 0;
-		virtual Teacher getTeacherById(int id) = 0;
-		virtual int editTeacher(Teacher teacher) = 0;
+		virtual int addStaffinf(staffInf StaffInf) = 0;
+		virtual staffInf getStaffInf(int id) = 0;
+		virtual int editStaffInf(staffInf StaffInf) = 0;
 };
-// Class TeacherRepositoryImpl
-class TeacherServiceImpl {
+// Class StaffinfServiceImpl
+class staffInfServiceImpl {
 	private:
-		TeacherRepositoryImpl teacherRepository;
-		TeacherValidation teacherValidation;
-		ValidationService validationService;
-		Teacher teacherResult;
+		staffInfRepoImpl staffInfRepoatry;
+		valditionStaffInf staffInfValidation;
+		staffInf staffInfResult;
 	public:
-		int addTeacher(Teacher teacher) {
-			if(teacherValidation.validteTeacher(teacher) == 1) {
-				int id = teacherRepository.addTeacher(teacher);
-				if(id == -1){
-					validationService.fullData("Teacher");
-				} else {
+		int addStaffInf(staffInf StaffInf) {
+			if(staffInfValidation.staffInfValdition(StaffInf) == 1) {
+				int id = staffInfRepoatry.addStaffInf(StaffInf);
+				
 					return id;
-				}
+				
 			}
 			return -1;
 		}
-		Teacher getTeacherById(int id) {
-			teacherResult = teacherRepository.getTeacherById(id);
-			if(teacherResult.getId() == -1){
-				validationService.notExist("Teacher",id);
-			}
-			return teacherResult;
+		void getStaffInf(int id) {
+			staffInfRepoatry.getStaffInf(id);
 		}
-		int editTeacher(Teacher teacher) {
-			int index = teacherRepository.editTeacher(teacher);
-			if(index == -1){
-				validationService.notExist("Teacher",teacher.getId());
-			} else {
-				cout<<"Sucess Edit Teacher Wit ID ["<<teacher.getId()<<"]"<<endl;
+		int editStaffInf(int id,staffInf StaffInf) {
+			staffInfRepoatry.editStaffInf(id,StaffInf);
+				cout<<"Sucess Edit Staffinf Wit ID ["<<StaffInf.getId()<<"]"<<endl;
+			
+		}
+};
+
+
+/////////////////////////////  medicine ,,Medicine \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// interface MedicineService
+class medicineService {
+	public:
+		virtual int addMedicine(medicine Medicine) = 0;
+		virtual patient getMedicine(int id) = 0;
+		virtual int editPatient(medicine Medicine) = 0;
+};
+// Class MedicineServiceImpl
+class medicineServiceImpl {
+	private:
+		MedicineRepoImpl MedicineRepoatry;
+		valditionMedicine MedicineValidation;
+	public:
+		int addMedicine(medicine Medicine) {
+			if(MedicineValidation.medicineValdition(Medicine) == 1) {
+				int id = MedicineRepoatry.addMedicine(Medicine);
+				
+					return id;
+				
 			}
+			return -1;
+		}
+		void getMedicine(int id) {
+		 MedicineRepoatry.getMedicine(id);
+		}
+		int editMedicine(int id,medicine Medicine) {
+			MedicineRepoatry.editMedicine(id,Medicine);
+				cout<<"Sucess Edit medicine Wit ID ["<<Medicine.getId()<<"]"<<endl;
+			
 		}
 };
