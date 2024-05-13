@@ -1,0 +1,214 @@
+#include<bits/stdc++.h>
+using namespace std;
+//*************************person*******************************************************
+class person {
+    protected :
+        int id;
+        string name;
+        string address ;
+        string dateofBirth;
+        string phoneNumber;
+        string gender ;
+        int age;
+    public:
+        //Set
+        void setId(int id){
+        this->id= id ;
+        }
+        void setName(string name){
+        this->name= name ;
+        }
+        void setAddress(string address){
+        this->address= address;
+        }
+        void setDateofBirth(string phoneNumber){
+        this->dateofBirth= dateofBirth ;
+        }
+        void setPhoneNumber(string phoneNumber){
+        this->phoneNumber= phoneNumber ;
+        }
+        void setGender(string gender){
+        this->gender= gender ;
+        }
+        void setAge(int age){
+        this->age= age ;
+        }
+        //Get
+        int getId(){
+        return id ;
+        }
+        string getName(){
+        return  name ;
+        }
+        string getAddress(){
+        return address ;
+        }
+        string setDateofBirth(){
+        return dateofBirth;
+        }
+        string getPhoneNumber(){
+        return phoneNumber;
+        }
+        string getGender(){
+        return gender ;
+        }
+        int getAge(){
+        return age ;
+        }
+};
+
+
+
+//*****************************doctor*********************************************************
+class doctor:public person {
+	private:
+        int salary ;
+    public:
+        // *****************set*******************************
+        void setSalary(int salary){
+        this->salary= salary ;
+        }
+        //*******************get*******************************
+        int getSalary(){
+        return salary;
+		}
+		void getDoctor(int id){
+		cout<<"the doctor name is"<< name;
+        cout<<" the doctor address is "<< address;
+        cout<<"the doctor date of Birth is "<< dateofBirth;
+        cout<<" the doctor phoneNumber is"<< phoneNumber;
+        cout<<" the doctor gender is"<< gender;
+		cout<<"salary = "<< salary;
+		}
+};
+//**********************************************medicine***********************************
+
+class medicine {
+	private:
+		int id;
+		string name ;
+		string effectiveMaterial;
+		int takeNumber ;
+		string sideEffect;
+		int availableNumber ;
+		bool narcotic ;
+	public:
+		void setId(int id){
+        this->id= id ;
+        }
+		void setName(string name)
+		{this->name=name;}
+		void setEffectiveMaterial(string effectiveMaterial)
+		{this->effectiveMaterial=effectiveMaterial;}
+		void setSideEffect(string sideEffect)
+		{this->sideEffect=sideEffect;}
+		void setTakeNumber(int takeNumber)
+		{this->takeNumber=takeNumber;}
+		void setNrcotic()
+		{narcotic= true;}
+		//*******************get*******************************
+	    string getName(){
+		return name;
+		}
+		int getId(){
+        return id ;
+        }
+		string getEffectiveMaterial(){
+		return effectiveMaterial;
+		}
+		string getSideEffect(){
+		return sideEffect ;
+		}
+		int getTakeNumber(){
+		return takeNumber;
+		}
+		bool getNarcotic(){
+		return narcotic;
+		};
+		void getMedicine(){
+		
+         cout<<"the medicine  name is"<< name;
+        cout<<" the medicine  EffectiveMaterial is "<< effectiveMaterial;
+        cout<<"the medicine  SideEffect is "<< sideEffect;
+        cout<<" the medicine  number of Take is"<< takeNumber;
+        cout<<"is the medicine Narcotic "<< narcotic;
+		}
+};
+//**************************************patient*********************************************************
+class patient :public person {
+	private:
+        int age;
+        string diagnosis ;
+        string prescribedMedications ;
+        string comment ;
+    public:
+        // *****************set*******************************
+       void setAge(int age){
+        this->age= age;
+        }
+        void setDiagnosis (string diagnosis ){
+        this->diagnosis = diagnosis  ;
+        }
+        void setPrescribedMedications(string prescribedMedications){
+        this->prescribedMedications = prescribedMedications  ;
+        }
+        void setComment(string comment){
+        this->comment= comment ;
+        }
+        //*************************get*************************
+        int getAge(){
+        return age ;
+        }
+        string getDiagnosis (){
+        return diagnosis ;
+        }
+        string getPrescribedMedications (){
+        return prescribedMedications ;
+        }
+        string setComment (){
+        return comment ;
+        }
+        void getPatient(){
+		
+         cout<<"the patient  name is"<< name;
+        cout<<" the patient  address is "<< address;
+        cout<<"the patient  date of Birth is "<< dateofBirth;
+        cout<<" the patient  phoneNumber is"<< phoneNumber;
+        cout<<" the patient  gender is"<< gender;
+        cout<<" the patient  age is"<<age;
+		cout<<"Prescribed Medications "<< prescribedMedications;
+		cout<<"Comment"<<comment;
+		cout<<"diagnosis"<<diagnosis;
+		}
+};
+//*******************************************************staff***************************
+class staffInf :public person {
+	private:
+        int salary ;
+        string jobtitle ;
+    public:
+        // *****************set*******************************
+        void setSalary(int salary){
+        this->salary= salary ;
+        }
+        void setJobtitle(string jobtitle){
+        this->jobtitle= jobtitle;
+        }
+        //*******************get*******************************
+        int getSalary(){
+        return salary;
+		}
+		string getJobtitle(){
+        return jobtitle;
+        }
+        void getStaffInf()
+		{
+        cout<<"the staff member name is"<< name;
+        cout<<" the staff member address is "<< address;
+        cout<<"the staff member date of Birth is "<< dateofBirth;
+        cout<<" the staff member phoneNumber is"<< phoneNumber;
+        cout<<" the staff member gender is"<< gender;
+        cout<<" the staff member Job title is"<<jobtitle;
+		cout<<"salary = "<< salary;
+		}
+};
