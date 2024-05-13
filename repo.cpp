@@ -1,37 +1,38 @@
-#include"doctor.cpp"
+#include"Values.cpp"
 //template <typename R>
-class objectRepo{
+//*******************doctor********************************
+class doctorRepo{
 	virtual int addDoctor(doctor Doctor)=0;
 	virtual void editDoctor (int id ,doctor Doctor)=0;
 	virtual void getDoctor (int id)=0;
 	virtual void removeDoctor (int id)=0;
 };
+int number1=0;
 
-int index1=0;
 class doctorRepoImpl{
-	doctor arr[1000];
+	doctor arr1[1000];
 	public :
 		int addDoctor (doctor Doctor)
 		{
-			arr[index1]=Doctor;
-			index1++;
-			return index1;
+			arr1[number1]=Doctor;
+			number1++;
+			return number1;
 		}
 		void editDoctor(int id,doctor Doctor)
 	{
-		arr[id-1]=Doctor;
+		arr1[id-1]=Doctor;
 	}
 	void getDoctor(int id)
 	{
-		arr[id].getvalue();
+		 arr1[id].getDoctor(id);
 	}
-	void removeDoctor(int id)
+/*	void removeDoctor(int id)
 	{
 		arr[id].removeValue();
-	}
+	}*/
 };
 
-//****************************************************************
+//********************************medicine********************************
 class medicineRepo{
 	virtual int addMedicine(medicine Medicine)=0;
 	virtual void editMedicine (medicine Medicine)=0;
@@ -40,30 +41,30 @@ class medicineRepo{
 };
 
 
-int index2=0;
+int number2=0;
 class MedicineRepoImpl{
-	R arr[1000];
+	medicine arr2[1000];
 	public :
-		int addMedicine (R Medicine)
+		int addMedicine (medicine Medicine)
 		{
-			arr[index2]=Medicine;
-			index2++;
-			return index2;
+			arr2[number2]=Medicine;
+			number2++;
+			return number2;
 		}
 		void editMedicine(int id,medicine Medicine)
 	{
-		arr[id-1]=Medicine;
+		arr2[id-1]=Medicine;
 	}
 	void getMedicine(int id)
 	{
-		arr[id].getvalue();
+		arr2[id].getMedicine();
 	}
-	void removeMedicine(int id)
+/*	void removeMedicine(int id)
 	{
 		arr[id].removeValue();
-	}
+	}*/
 };
-//****************************************************************
+//***************************patient*************************************
 class patientRepo{
 	virtual int addPatient(patient Patient)=0;
 	virtual void editPatient (patient Patient)=0;
@@ -73,30 +74,31 @@ class patientRepo{
 
 
 
-int inde3=0;
+int number3=0;
 class patientRepoImpl{
-	patient arr[1000];
+
+	patient arr3[1000];
 	public :
 		int addPatient (patient Patient)
 		{
-			arr[index3]=Patient;
-			index3++;
-			return index3;
+			arr3[number3]=Patient;
+			number3++;
+			return number3;
 		}
 		void editPatient(int id,patient Patient)
 	{
-		arr[id-1]=Patient;
+		arr3[id-1]=Patient;
 	}
 	void getPatient(int id)
 	{
-		arr[id].getvalue();
+		arr3[id].getPatient();
 	}
-	void removePatient(int id)
+/*	void removePatient(int id)
 	{
 		arr[id].removeValue();
-	}
+	}*/
 };
-//*************************************************************************
+//*********************************staffInf****************************************
 class staffInfRepo{
 	virtual int addStaffInf(staffInf StaffInf)=0;
 	virtual void editStaffInf(staffInf StaffInf)=0;
@@ -107,26 +109,26 @@ class staffInfRepo{
 
 
 
-int index4=0;
-class staffInfRepoImpl{
-	staffInf arr[1000];
+int number4=0;
+class staffInfRepoImpl {
+	staffInf arr4[1000];
 	public :
 		int addStaffInf (staffInf StaffInf)
 		{
-			arr[index4]=StaffInf;
-			index4++;
-			return index4;
+			arr4[number4]=StaffInf;
+			number4++;
+			return number4;
 		}
-		void editStaffInf(int id,staffInf taffInf)
+		void editStaffInf(int id,staffInf StaffInf)
 	{
-		arr[id-1]=staffInf;
+		arr4[id-1]=StaffInf;
 	}
 	void getStaffInf(int id)
 	{
-		arr[id].getvalue();
+		arr4[id].getStaffInf();
 	}
-	void removeStaffInf(int id)
+/*	void removeStaffInf(int id)
 	{
 		arr[id].removeValue();
-	}
+	}*/
 };
