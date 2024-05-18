@@ -14,7 +14,13 @@ class doctorRepoImpl{
 	public :
 		int addDoctor (doctor Doctor)
 		{
-			arr1[number1]=Doctor;
+			arr1[number1].setName(Doctor.getName());
+			arr1[number1].setAddress(Doctor.getAddress());
+			arr1[number1].setDateofBirth(Doctor.getDateofBirth());
+			arr1[number1].setPhoneNumber(Doctor.getPhoneNumber());
+			arr1[number1].setGender(Doctor.getGender());
+			arr1[number1].setAge(Doctor.getAge());
+			arr1[number1].setSalary(Doctor.getSalary());
 			number1++;
 			return number1;
 		}
@@ -24,12 +30,8 @@ class doctorRepoImpl{
 	}
 	void getDoctor(int id)
 	{
-		 arr1[id].getDoctor(id);
+		 arr1[id-1].getDoctor(id);
 	}
-/*	void removeDoctor(int id)
-	{
-		arr[id].removeValue();
-	}*/
 };
 
 //********************************medicine********************************
@@ -57,7 +59,7 @@ class MedicineRepoImpl{
 	}
 	void getMedicine(int id)
 	{
-		arr2[id].getMedicine();
+		arr2[id-1].getMedicine();
 	}
 /*	void removeMedicine(int id)
 	{
@@ -81,7 +83,15 @@ class patientRepoImpl{
 	public :
 		int addPatient (patient Patient)
 		{
-			arr3[number3]=Patient;
+			arr3[number3].setName(Patient.getName());
+			arr3[number3].setAddress(Patient.getAddress());
+			arr3[number3].setDateofBirth(Patient.getDateofBirth());
+			arr3[number3].setPhoneNumber(Patient.getPhoneNumber());
+			arr3[number3].setGender(Patient.getGender());
+			arr3[number3].setAge(Patient.getAge());
+       	    arr3[number3].setDiagnosis (Patient.getDiagnosis() );
+        	arr3[number3].setPrescribedMedications(Patient.getPrescribedMedications());
+         	arr3[number3].setComment(Patient.getComment());
 			number3++;
 			return number3;
 		}
@@ -91,7 +101,7 @@ class patientRepoImpl{
 	}
 	void getPatient(int id)
 	{
-		arr3[id].getPatient();
+		arr3[id-1].getPatient();
 	}
 /*	void removePatient(int id)
 	{
@@ -115,17 +125,33 @@ class staffInfRepoImpl {
 	public :
 		int addStaffInf (staffInf StaffInf)
 		{
-			arr4[number4]=StaffInf;
+			arr4[number4].setName(StaffInf.getName());
+			arr4[number4].setAddress(StaffInf.getAddress());
+			arr4[number4].setDateofBirth(StaffInf.getDateofBirth());
+			arr4[number4].setPhoneNumber(StaffInf.getPhoneNumber());
+			arr4[number4].setGender(StaffInf.getGender());
+			arr4[number4].setAge(StaffInf.getAge());
+			arr4[number4].setSalary(StaffInf.getSalary());
+			arr4[number4].setJobtitle(StaffInf.getJobtitle());
 			number4++;
 			return number4;
 		}
 		void editStaffInf(int id,staffInf StaffInf)
 	{
-		arr4[id-1]=StaffInf;
+			arr4[id-1].setName(StaffInf.getName());
+			arr4[id-1].setAddress(StaffInf.getAddress());
+			arr4[id-1].setDateofBirth(StaffInf.getDateofBirth());
+			arr4[id-1].setPhoneNumber(StaffInf.getPhoneNumber());
+			arr4[id-1].setGender(StaffInf.getGender());
+			arr4[id-1].setAge(StaffInf.getAge());
+			arr4[id-1].setSalary(StaffInf.getSalary());
+			arr4[id-1].setJobtitle(StaffInf.getJobtitle());
+			cout<<"\nthe new values : \n";
+			arr4[id-1].getStaffInf();
 	}
 	void getStaffInf(int id)
 	{
-		arr4[id].getStaffInf();
+		arr4[id-1].getStaffInf();
 	}
 /*	void removeStaffInf(int id)
 	{
